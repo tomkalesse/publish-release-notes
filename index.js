@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-const sendToTeams = require('./src/sendToTeams');
+const sendToTeams = require('./src/ms-teams.js');
 
 try {
   const teamsWebhookUrl = core.getInput('ms-teams-webhook');
