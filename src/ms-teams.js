@@ -24,7 +24,7 @@ function sendToTeams(webhookUrl, release) {
           body: [
             {
               type: "TextBlock",
-              text: release.title,
+              text: `Release: ${release.title}`,
               weight: "bolder",
               size: "medium"
             },
@@ -50,7 +50,7 @@ function sendToTeams(webhookUrl, release) {
           actions: [
             {
               type: "Action.OpenUrl",
-              title: "View Full Release Notes",
+              title: "View Release in GitHub",
               url: release.url
             }
           ]

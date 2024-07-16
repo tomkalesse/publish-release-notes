@@ -11,15 +11,6 @@ try {
     return;
   }
 
-  const release = {
-    title: github.context.payload.release.name,
-    date: github.context.payload.release.published_at,
-    notes: github.context.payload.release.body,
-    url: github.context.payload.release.html_url
-  };
-
-  console.log(release);
-
   if (teamsWebhookUrl) {
     console.log('Sending release notes to Teams channel');
     const release = {
