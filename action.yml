@@ -1,5 +1,8 @@
 name: 'Publish Release Notes'
 description: 'Publish changelog in form of release notes'
+branding:
+  icon: 'share'
+  color: 'white'
 inputs:
   ms-teams-webhook:
     description: 'Microsoft Teams Webhook URL'
