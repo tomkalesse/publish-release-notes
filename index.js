@@ -16,7 +16,7 @@ try {
     const release = {
       title: github.context.payload.release.name,
       date: github.context.payload.release.published_at,
-      notes: github.context.payload.release.body,
+      notes: github.context.payload.release.body.replace(/\n/g, '  \n\n'),
       url: github.context.payload.release.html_url
     };
     sendToTeams(teamsWebhookUrl, release);
