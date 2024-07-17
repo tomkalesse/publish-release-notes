@@ -26,7 +26,7 @@ function sendToTeams(webhookUrl, release) {
               type: "TextBlock",
               text: `Release: ${release.title}`,
               weight: "bolder",
-              size: "medium"
+              size: "extraLarge",
             },
             {
               type: "TextBlock",
