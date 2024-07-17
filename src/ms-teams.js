@@ -39,12 +39,14 @@ function sendToTeams(webhookUrl, release) {
               text: "Changes:",
               weight: "bolder",
               wrap: true,
+              size: "large",
               margin: "small"
             },
             {
               type: "TextBlock",
               text: release.notes,
-              wrap: true
+              wrap: true,
+              size: "large"
             }
           ],
           actions: [
