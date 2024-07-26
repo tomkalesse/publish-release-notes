@@ -2,7 +2,7 @@
 
 Github action to publish release notes, possible options:
 
-- Microsoft Teams Channel - [Use workflows instead of Office 365 connectors for Webhook URL](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/)
+- Microsoft Teams Channel or Chat - [Use workflows instead of Office 365 connectors for Webhook URL](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/)
 
 Needs release in event context of the workflow.
 
