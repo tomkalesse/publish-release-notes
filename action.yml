@@ -6,6 +6,10 @@ branding:
 inputs:
   ms-teams-webhook:
     description: 'Microsoft Teams Webhook URL'
+  api-endpoint:
+    description: 'API Endpoint URL'
+  api-key:
+    description: 'API Key (authorization)'
 runs:
   using: 'node20'
   main: 'index.js'
