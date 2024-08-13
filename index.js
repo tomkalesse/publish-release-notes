@@ -4,7 +4,7 @@ const github = require('@actions/github');
 const sendToTeams = require('./src/ms-teams.js');
 const sendToApi = require('./src/api-request.js');
 
-const release = {};
+var release = {};
 
 try {
   const teamsWebhookUrl = core.getInput('ms-teams-webhook');
