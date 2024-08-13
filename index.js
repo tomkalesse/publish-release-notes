@@ -14,7 +14,7 @@ try {
     return;
   } else {
     const release = {
-      repo: github.context.repository.name,
+      repo: github.context.repository,
       title: github.context.payload.release.name,
       date: github.context.payload.release.published_at,
       notes: github.context.payload.release.body.replace(/\n/g, '  \n\n'),
