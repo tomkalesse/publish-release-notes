@@ -16,7 +16,7 @@ try {
     return;
   } else {
     release = {
-      repo: github.context.payload.repository.name,
+      repo: github.context.payload.repository.full_name,
       title: github.context.payload.release.name,
       date: github.context.payload.release.published_at,
       notes: github.context.payload.release.body.replace(/\n/g, '  \n\n'),
