@@ -24,9 +24,44 @@ Please avoid using plain text i.e. webhook url or API key for public repositorie
 
 
 ## Microsoft Teams Channel or Chat
-
 Create a Webhook URL for Microsoft Teams to publish the release as adaptive card in chat or channel.
 Hint: [Use workflows instead of Office 365 connectors for Webhook URL](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/)
 
+#### Usage
+You only have to specify the "ms-teams-webhook" for using Microsoft Teams as destination.
+<!-- start usage -->
+```yaml
+- name: Publish Release Notes
+  uses: tomkalesse/publish-release-notes@v1
+  with:
+    ms-teams-webhook: ${{ secrets.WEBHOOK_URL }}
+```
+<!-- end usage -->
+
 
 ## API Request
+The request structure:
+- Method: POST
+- Header: 'api-key': ${key}
+- Body: 
+  ```json
+    {
+      "repo": "github.context.repo.repo",
+      "title": "github.context.payload.release.name",
+      "date": "github.context.payload.release.published_at",
+      "notes": "github.context.payload.release.body.replace(/\n/g, '  \n\n')",
+      "url": "github.context.payload.release.html_url"
+    }
+  ```
+
+#### Usage
+You only have to specify the "api-endpoint" and "api-key" for using an API Endpoint as destination.
+<!-- start usage -->
+```yaml
+- name: Publish Release Notes
+  uses: tomkalesse/publish-release-notes@v1
+  with:
+    api-endpoint: 'https://endpoint.dev/releases'
+    api-key: ${{ secrets.API_KEY }}
+```
+<!-- end usage -->

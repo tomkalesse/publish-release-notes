@@ -5,6 +5,7 @@ const axios = require('axios');
  *
  * @param {string} webhookUrl - The Teams webhook URL.
  * @param {object} release - The release notes content.
+ * @param {string} release.repo - The repository name.
  * @param {string} release.title - The title of the release notes.
  * @param {string} release.date - The release date.
  * @param {string} release.notes - The text block of changes.
@@ -22,6 +23,11 @@ function sendToTeams(webhookUrl, release) {
           type: "AdaptiveCard",
           version: "1.2",
           body: [
+            {
+              type: "TextBlock",
+              text: `Repository: ${release.repo}`,
+              size: "Large",
+            },
             {
               type: "TextBlock",
               text: `Release: ${release.title}`,
