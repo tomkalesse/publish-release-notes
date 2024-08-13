@@ -4,6 +4,8 @@ const github = require('@actions/github');
 const sendToTeams = require('./src/ms-teams.js');
 const sendToApi = require('./src/api-request.js');
 
+const release = {};
+
 try {
   const teamsWebhookUrl = core.getInput('ms-teams-webhook');
   const apiEndpoint = core.getInput('api-endpoint');
@@ -13,7 +15,7 @@ try {
     console.log('No release found in the payload');
     return;
   } else {
-    const release = {
+    release = {
       repo: github.context.repository,
       title: github.context.payload.release.name,
       date: github.context.payload.release.published_at,
