@@ -13,7 +13,7 @@ Please avoid using plain text i.e. webhook url or API key for public repositorie
 <!-- start usage -->
 ```yaml
 - name: Publish Release Notes
-  uses: tomkalesse/publish-release-notes@v1
+  uses: tomkalesse/publish-release-notes@v2
   with:
     ms-teams-webhook: ${{ secrets.WEBHOOK_URL }}
     api-endpoint: 'https://endpoint.dev/releases'
@@ -32,7 +32,7 @@ You only have to specify the "ms-teams-webhook" for using Microsoft Teams as des
 <!-- start usage -->
 ```yaml
 - name: Publish Release Notes
-  uses: tomkalesse/publish-release-notes@v1
+  uses: tomkalesse/publish-release-notes@v2
   with:
     ms-teams-webhook: ${{ secrets.WEBHOOK_URL }}
 ```
@@ -59,7 +59,7 @@ You only have to specify the "api-endpoint" and "api-key" for using an API Endpo
 <!-- start usage -->
 ```yaml
 - name: Publish Release Notes
-  uses: tomkalesse/publish-release-notes@v1
+  uses: tomkalesse/publish-release-notes@v2
   with:
     api-endpoint: 'https://endpoint.dev/releases'
     api-key: ${{ secrets.API_KEY }}
